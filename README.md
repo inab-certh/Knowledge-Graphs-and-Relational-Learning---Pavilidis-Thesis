@@ -2,9 +2,10 @@
 
 Τα αρχεία που περιέχονται είναι πρώτες προσπάθειες για ontology embedding και μετατροπή οντολογιών σε κατάλληλη μορφή για machine learning
 
-Ο φάκελος "random walks" έχει ένα παράδειγμα μετατροπής του γράφου OWL από το παράδειγμα family πρώτα σε knowledge graph που τηρεί τους κανόνες του owl2vec. Στη συνέχεια τρέχουμε ένα deepwalk πάνω στο γράφημα.
-Οι παράμετροι του μοντέλου deepwalk είναι ενδεικτικές και δεν μας αφορούν αφού έτσι και αλλιώς ο γράφος είναι πολύ μικρός για training
-
+Ο φάκελος "embeddings" τα Vector embeddings που προκύπτουν από τον κώδικα του φακέλου "Models", κάθως και παράγωγα αρχεία. Συγκεκριμένα
+* Το αρχείο "annotation_corpus_gene_ontology.txt" περιέχει όλα τα annotations της οντολογίας ώστε να χρησιμοποιηθούν σαν corpus
+* To "ontology.embeddings-OWL2VecStar.txt" περιέχει ένα embedding κάθε class, individual και property. Χρησιμοποιεί την τεχνική embedding των κανόνων του OWL2Vec*
+* Το "OWL2VecStar_projection_with_word2vec_embeddings_.txt" περιέχει ένα embedding κάθε class, individual και property. Χρησιμοποιεί την τεχνική embedding των κανόνων του OWL2Vec*, μέσα από τον wrapper της mowl με DeepWalks για να προκύψει corpus και  Word2Vec για συντακτική ανάλυση
 Ο φάκελος "embeddings" περιέχει ένα embedding κάθε class, individual και property. Χρησιμοποιεί την τεχνική embedding των κανόνων του OWL2Vec* αλλά γίνεται μέσα από τον wrapper της mowl με Word2Vec(Το ίδιο κάνει και η OWL2Vec* σαν standalone απλώς σε πιο περίπλοκο document structure)
 
-Πρόσθεσα και το αρχείο για το embedding του gene ontology από την OWL2Vec* σε standalone. όλες οι παράμετροι του μοντέλου είναι επίσης οι αρχικές. Πιθανότατα θα πρέπει να πειράξω vector size και walk depth 
+Η οντολογία που χρησιμοποιήθηκε είναι το Gene Ontology 
